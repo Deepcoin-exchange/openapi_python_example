@@ -35,14 +35,14 @@ def on_open(ws):
     threading.Thread(target=send_heartbeat, daemon=True).start()
 
     request_data = {
-            "target":"kline",
-            "localID":1,
-            "action":"subscribe",
-            "instrumentID":"BTCUSDT",
-            "periodID":"1d",
-            "timezone":"Asia/Shanghai",
-            "count":3
-        }
+        "SendTopicAction": {
+            "Action": "1",
+            "FilterValue": "DeepCoin_BTCUSDT_1m",
+            "LocalNo": 6,
+            "ResumeNo": -1,
+            "TopicID": "11"
+            }
+    }
     ws.send(json.dumps(request_data))
     print(f"Sent: {json.dumps(request_data)}")
 
