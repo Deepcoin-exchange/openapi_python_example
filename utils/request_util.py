@@ -17,10 +17,10 @@ class BaseMethod(object):
         print(f"iso_time:{self.iso_time}")
 
         self.headers = {
-            'OK-ACCESS-KEY': self.api_key,
-            'OK-ACCESS-SIGN': "",
-            'OK-ACCESS-TIMESTAMP': self.iso_time,
-            'OK-ACCESS-PASSPHRASE': self.passphrase,
+            'DC-ACCESS-KEY': self.api_key,
+            'DC-ACCESS-SIGN': "",
+            'DC-ACCESS-TIMESTAMP': self.iso_time,
+            'DC-ACCESS-PASSPHRASE': self.passphrase,
         }
 
     def request_app(self,data):
